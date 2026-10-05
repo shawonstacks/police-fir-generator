@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Police FIR Generator - অনলাইন ট্রোল ওয়ারেন্ট</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- html2canvas for Image Download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+    }
+    .courier {
+      font-family: 'Courier Prime', monospace;
+    }
+    .fir-paper {
+      background: #fbf8eb;
+      background-image: radial-gradient(#e2d9b8 1px, transparent 0);
+      background-size: 16px 16px;
+      color: #1a1a1a;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .stamp-red {
+      color: #cc0000;
+      border: 4px dashed #cc0000;
+      transform: rotate(-12deg);
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+    }
+    .stamp-seal {
+      border: 3px double #1e3a8a;
+      color: #1e3a8a;
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 flex flex-col items-center">
+
+  <!-- Header -->
+  <header class="text-center max-w-2xl mb-8">
+    <div class="inline-flex items-center gap-2 bg-red-900/30 text-red-400 border border-red-500/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-3">
+      <i class="fa-solid fa-handcuffs">100% Fun & Troll Generator</i>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
+      অনলাইন <span class="text-red-500">পুলিশ FIR</span> জেনারেটর 🚔
+    </h1>
+    <p class="text-gray-400 text-sm md:text-base">
+      বন্ধুর বিরুদ্ধে ফানি অপরাধের ডিজিটাল অ্যারেস্ট ওয়ারেন্ট তৈরি করুন এবং ফেসবুকে ট্রোল করুন!
+    </p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Left Column: Form Controls -->
+    <div class="lg:col-span-5 bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl space-y-5">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2 border-b border-gray-800 pb-3">
+        <i class="fa-solid fa-file-pen text-red-500"></i> আসামীর বিবরণ দিন
+      </h2>
+
+      <!-- Name Input -->
+      <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1">আসামীর নাম (বন্ধুর নাম):</label>
+        <input type="text" id="accusedName" value="সাকিব আহমেদ" placeholder="যেমন: আবির হোসেন" 
+          class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+      </div>
+
+      <!-- Photo Upload -->
+      <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1">আসামীর ছবি (Mugshot):</label>
+        <input type="file" id="photoInput" accept="image/*" 
+          class="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-red-600 file:text-white hover:file:bg-red-700 cursor-pointer bg-gray-800 border border-gray-700 rounded-xl p-1">
+      </div>
+
+      <!-- Crime Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1">অপরাধের ধরন (Preset Crime):</label>
+        <select id="crimePreset" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition mb-2">
+          <option value="মেসেজে সিন করে ১০ ঘণ্টা পর রিপ্লাই দেওয়া">মেসেজে সিন করে ১০ ঘণ্টা পর রিপ্লাই দেওয়া</option>
+          <option value="চা খেয়ে বিল দেওয়ার সময় মানিব্যাগ ভুলে যাওয়ার নাটক করা">চা খেয়ে বিল দেওয়ার সময় মানিব্যাগ ভুলে যাওয়ার নাটক করা</option>
+          <option value="সারাদিন ফেসবুক চালিয়েও পড়াশোনার দোহাই দেওয়া">সারাদিন ফেসবুক চালিয়েও পড়াশোনার দোহাই দেওয়া</option>
+          <option value="খাবার টেবিলে ছবি তোলার চক্করে সবাইকে ক্ষুধার্থ রাখা">খাবার টেবিলে ছবি তোলার চক্করে সবাইকে ক্ষুধার্থ রাখা</option>
+          <option value="ইনবক্সে পেরা দিয়ে গ্রুপ চ্যাটে সুশীল সাজা">ইনবক্সে পেরা দিয়ে গ্রুপ চ্যাটে সুশীল সাজা</option>
+          <option value="custom">নিজের মতো লিখুন...</option>
+        </select>
+        <input type="text" id="customCrime" placeholder="কাস্টম অপরাধ লিখুন..." class="hidden w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+      </div>
+
+      <!-- Punishment Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1">দাবি / জরিমানা (Punishment):</label>
+        <input type="text" id="punishmentInput" value="৩ প্লেট কাচ্চি ফাইন এবং ৭ দিন মেসেন্জার নিষিদ্ধ" placeholder="যেমন: ২ কাপ চা খাওয়াতে হবে" 
+          class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+      </div>
+
+      <!-- Complainant / Police Officer Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1">বাদী / পুলিশ অফিসারের নাম:</label>
+        <input type="text" id="officerName" value="ইনস্পেকটর চরম প্যারা" placeholder="আপনার নাম" 
+          class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="pt-2 space-y-3">
+        <button id="downloadBtn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> FIR কার্ড ডাউনলোড করুন (PNG)
+        </button>
+        <button id="fbShareBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-brand fa-facebook"></i> ফেসবুকে শেয়ার করার গাইড
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: FIR Preview Card -->
+    <div class="lg:col-span-7 flex flex-col items-center w-full">
+      <div id="firCard" class="fir-paper w-full max-w-xl p-6 md:p-8 rounded-lg relative overflow-hidden border-2 border-yellow-900/30">
+        
+        <!-- Background Watermark Seal -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+          <i class="fa-solid fa-shield-halved text-[280px] text-blue-900"></i>
+        </div>
+
+        <!-- FIR Header -->
+        <div class="text-center border-b-2 border-black/80 pb-4 mb-4 relative">
+          <div class="flex justify-between items-center text-xs courier font-bold text-gray-700 mb-1">
+            <span>FORM NO. 54-B</span>
+            <span>CONFIDENTIAL</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-black tracking-wide text-red-900 uppercase">ডিজিটাল ট্রোল থানা</h3>
+          <p class="text-xs font-semibold text-gray-800">সাইবার অপরাধ ও ফানি কেস বিভাগ, বাংলাদেশ</p>
+          <div class="inline-block bg-black text-white text-xs font-mono font-bold px-3 py-1 rounded mt-2 uppercase tracking-widest">
+            FIRST INFORMATION REPORT (F.I.R.)
+          </div>
+        </div>
+
+        <!-- Warrant Stamp overlay -->
+        <div class="absolute top-16 right-6 stamp-red font-black text-xs md:text-sm px-3 py-1 uppercase tracking-wider z-10 opacity-80 pointer-events-none">
+          WANTED / অ্যারেস্ট ওয়ারেন্ট
+        </div>
+
+        <!-- Meta Info -->
+        <div class="grid grid-cols-2 text-xs courier font-bold border-b border-dashed border-gray-400 pb-3 mb-4 text-gray-800">
+          <div>FIR NO: <span id="firNo" class="text-red-800">#TRL-84920</span></div>
+          <div class="text-right">তারিখ: <span id="firDate">06/10/2026</span></div>
+        </div>
+
+        <!-- Main Content Body -->
+        <div class="grid grid-cols-12 gap-4 items-start mb-4">
+          <!-- Mugshot Photo -->
+          <div class="col-span-4 flex flex-col items-center">
+            <div class="w-28 h-36 md:w-32 md:h-40 border-2 border-black bg-gray-200 overflow-hidden relative shadow-md">
+              <img id="previewPhoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Accused Photo" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 inset-x-0 bg-black/70 text-white text-[9px] text-center py-0.5 courier">MUGSHOT</div>
+            </div>
+            <span class="text-[10px] font-bold mt-1 text-gray-600 uppercase">অপরাধীর ছবি</span>
+          </div>
+
+          <!-- Case Details -->
+          <div class="col-span-8 text-sm space-y-2 text-gray-900">
+            <div>
+              <span class="font-bold text-gray-700">আসামীর নাম:</span>
+              <p id="cardAccusedName" class="font-bold text-lg text-red-900 border-b border-gray-400 pb-0.5">সাকিব আহমেদ</p>
+            </div>
+            <div>
+              <span class="font-bold text-gray-700">প্রধান অভিযোগ (Crime):</span>
+              <p id="cardCrime" class="font-semibold text-gray-800 bg-yellow-100/80 p-1.5 rounded border border-yellow-300 text-xs mt-0.5">
+                মেসেজে সিন করে ১০ ঘণ্টা পর রিপ্লাই দেওয়া
+              </p>
+            </div>
+            <div>
+              <span class="font-bold text-gray-700">দাবি / জরিমানা:</span>
+              <p id="cardPunishment" class="font-bold text-red-700 text-xs mt-0.5">
+                ৩ প্লেট কাচ্চি ফাইন এবং ৭ দিন মেসেন্জার নিষিদ্ধ
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer / Signatures -->
+        <div class="mt-6 border-t-2 border-black/80 pt-4 grid grid-cols-2 items-end">
+          <div class="text-left">
+            <div class="w-20 h-8 border-b border-gray-600 mb-1 flex items-end justify-center">
+              <span class="text-xs font-serif italic text-blue-900 font-bold" id="cardOfficerSig">ইনস্পেকটর</span>
+            </div>
+            <p class="text-[11px] font-bold text-gray-800">তদন্তকারী কর্মকর্তা</p>
+            <p class="text-[9px] text-gray-600" id="cardOfficerName">ইনস্পেকটর চরম প্যারা</p>
+          </div>
+
+          <div class="text-right flex flex-col items-end">
+            <div class="stamp-seal rounded-full w-14 h-14 flex items-center justify-center text-[9px] font-bold text-center leading-tight rotate-12 mb-1">
+              ডিজিটাল<br>থানা<br>SEAL
+            </div>
+            <p class="text-[9px] courier text-gray-500">yoursite.com/fir</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // DOM Elements
+    const accusedNameInput = document.getElementById('accusedName');
+    const photoInput = document.getElementById('photoInput');
+    const crimePreset = document.getElementById('crimePreset');
+    const customCrime = document.getElementById('customCrime');
+    const punishmentInput = document.getElementById('punishmentInput');
+    const officerNameInput = document.getElementById('officerName');
+
+    const cardAccusedName = document.getElementById('cardAccusedName');
+    const cardCrime = document.getElementById('cardCrime');
+    const cardPunishment = document.getElementById('cardPunishment');
+    const cardOfficerName = document.getElementById('cardOfficerName');
+    const cardOfficerSig = document.getElementById('cardOfficerSig');
+    const previewPhoto = document.getElementById('previewPhoto');
+    const firNo = document.getElementById('firNo');
+    const firDate = document.getElementById('firDate');
+
+    // Set Random FIR Number & Current Date
+    firNo.textContent = '#TRL-' + Math.floor(10000 + Math.random() * 90000);
+    const today = new Date();
+    firDate.textContent = today.toLocaleDateString('en-GB');
+
+    // Live Sync Inputs to Card
+    accusedNameInput.addEventListener('input', (e) => {
+      cardAccusedName.textContent = e.target.value || 'আসামীর নাম';
+    });
+
+    officerNameInput.addEventListener('input', (e) => {
+      const val = e.target.value || 'ইনস্পেকটর';
+      cardOfficerName.textContent = val;
+      cardOfficerSig.textContent = val.split(' ')[0];
+    });
+
+    punishmentInput.addEventListener('input', (e) => {
+      cardPunishment.textContent = e.target.value || 'কোনো জরিমানা নেই';
+    });
+
+    crimePreset.addEventListener('change', (e) => {
+      if (e.target.value === 'custom') {
+        customCrime.classList.remove('hidden');
+        cardCrime.textContent = customCrime.value || 'অপরাধের বিবরণ লিখুন...';
+      } else {
+        customCrime.classList.add('hidden');
+        cardCrime.textContent = e.target.value;
+      }
+    });
+
+    customCrime.addEventListener('input', (e) => {
+      cardCrime.textContent = e.target.value || 'অপরাধের বিবরণ লিখুন...';
+    });
+
+    // Handle Photo Upload
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          previewPhoto.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Download Image Button
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const firCard = document.getElementById('firCard');
+      html2canvas(firCard, { scale: 3 }).then((canvas) => {
+        const link = document.createElement('a');
+        link.download = `FIR_${accusedNameInput.value || 'Card'}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    });
+
+    // FB Share Info Alert
+    document.getElementById('fbShareBtn').addEventListener('click', () => {
+      alert('📌 ফেসবুকে পোস্ট করার নিয়ম:\n\n১. প্রথমে "FIR কার্ড ডাউনলোড করুন" বাটনে ক্লিক করে ছবি সেভ করুন।\n২. ছবিটি ফেসবুকে পোস্ট করুন এবং বন্ধুকে ট্যাগ করে কমেন্টে লিখে দিন: "তোকে অ্যারেস্ট করা হলো!" 😂');
+    });
+  </script>
+</body>
+</html>
